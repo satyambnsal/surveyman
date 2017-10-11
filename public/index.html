@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Survey Man</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="#">Login</a></li>
+        </ul>
+    </div>
+</nav>
+<h2 style="text-align: center">CARE PROVIDER</h2>
+<form method="post" action="/submitForm" class="form-horizontal container">
+    <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="fullName" class="form-control">
+        </div>
+        <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="emailId" class="form-control">
+        </div>
+    <div class="row">
+        <p><strong>Friendliness/Courtesy of the care provider</strong></p>
+        <label class="radio-inline col-sm-1"><input type="radio" name="friendliness" value="1" >Very Poor</label>
+        <label class="radio-inline col-sm-1"><input type="radio" name="friendliness" value="2" >Poor</label>
+        <label class="radio-inline col-sm-1"><input type="radio" name="friendliness" value="3" >Fair</label>
+        <label class="radio-inline col-sm-1"><input type="radio" name="friendliness" value="4" >Good</label>
+        <label class="radio-inline col-sm-2"><input type="radio" name="friendliness" value="5" >Very Good</label>
+    </div>
+    <div class="row">
+        <p><strong>Explanation the care provider gave you about your problem condition</strong></p>
+        <label class="radio-inline col-sm-1"><input type="radio" name="explanation" value="1">Very Poor</label>
+        <label class="radio-inline col-sm-1"><input type="radio" name="explanation" value="2">Poor</label>
+        <label class="radio-inline col-sm-1"><input type="radio" name="explanation" value="3">Fair</label>
+        <label class="radio-inline col-sm-1"><input type="radio" name="explanation" value="4">Good</label>
+        <label class="radio-inline col-sm-2"><input type="radio" name="explanation" value="5">Very Good</label>
+    </div>
+    <div class="row">
+        <p><strong>Concern the care provider showed for your questions or worries</strong></p>
+        <label class="radio-inline col-sm-1"><input type="radio" name="concernShowed" value="1">Very Poor</label>
+        <label class="radio-inline col-sm-1"><input type="radio" name="concernShowed" value="2">Poor</label>
+        <label class="radio-inline col-sm-1"><input type="radio" name="concernShowed" value="3">Fair</label>
+        <label class="radio-inline col-sm-1"><input type="radio" name="concernShowed" value="4">Good</label>
+        <label class="radio-inline col-sm-2"><input type="radio" name="concernShowed" value="5">Very Good</label>
+    </div>
+    <div class="row">
+        <p><strong>Care provider's efforts to include you in decisions about your treatment</strong></p>
+        <label class="radio-inline col-sm-1"><input type="radio" name="includeInDecision" value="1">Very Poor</label>
+        <label class="radio-inline col-sm-1"><input type="radio" name="includeInDecision" value="2">Poor</label>
+        <label class="radio-inline col-sm-1"><input type="radio" name="includeInDecision" value="3">Fair</label>
+        <label class="radio-inline col-sm-1"><input type="radio" name="includeInDecision" value="4">Good</label>
+        <label class="radio-inline col-sm-2"><input type="radio" name="includeInDecision" value="5">Very Good</label>
+    </div>
+    <div class="row">
+        <p><strong>Information the care provider gave you about medications</strong></p>
+        <label class="radio-inline col-sm-1"><input type="radio" name="medicationInfo" value="1">Very Poor</label>
+        <label class="radio-inline col-sm-1"><input type="radio" name="medicationInfo" value="2">Poor</label>
+        <label class="radio-inline col-sm-1"><input type="radio" name="medicationInfo" value="3">Fair</label>
+        <label class="radio-inline col-sm-1"><input type="radio" name="medicationInfo" value="4">Good</label>
+        <label class="radio-inline col-sm-2"><input type="radio" name="medicationInfo" value="5">Very Good</label>
+    </div>
+    <div class="row">
+        <p><strong>Instructions the care provider gave you about follow-up care</strong></p>
+        <label class="radio-inline col-sm-1"><input type="radio" name="followUpInstructions" value="1">Very Poor</label>
+        <label class="radio-inline col-sm-1"><input type="radio" name="followUpInstructions" value="2">Poor</label>
+        <label class="radio-inline col-sm-1"><input type="radio" name="followUpInstructions" value="3">Fair</label>
+        <label class="radio-inline col-sm-1"><input type="radio" name="followUpInstructions" value="4">Good</label>
+        <label class="radio-inline col-sm-2"><input type="radio" name="followUpInstructions"value="5">Very Good</label>
+    </div>
+    <div class="row">
+        <p><strong>Degree to which care provider talked with you using words you could understand</strong></p>
+        <label class="radio-inline col-sm-1"><input type="radio" name="usedLanguage" value="1">Very Poor</label>
+        <label class="radio-inline col-sm-1"><input type="radio" name="usedLanguage" value="2">Poor</label>
+        <label class="radio-inline col-sm-1"><input type="radio" name="usedLanguage" value="3">Fair</label>
+        <label class="radio-inline col-sm-1"><input type="radio" name="usedLanguage" value="4">Good</label>
+        <label class="radio-inline col-sm-2"><input type="radio" name="usedLanguage" value="5">Very Good</label>
+    </div>
+    <div class="row">
+        <p><strong>Amout of time the care provider spent with you</strong></p>
+        <label class="radio-inline col-sm-1"><input type="radio" name="spentTimeAmout" value="1">Very Poor</label>
+        <label class="radio-inline col-sm-1"><input type="radio" name="spentTimeAmout" value="2">Poor</label>
+        <label class="radio-inline col-sm-1"><input type="radio" name="spentTimeAmout" value="3">Fair</label>
+        <label class="radio-inline col-sm-1"><input type="radio" name="spentTimeAmout" value="4">Good</label>
+        <label class="radio-inline col-sm-2"><input type="radio" name="spentTimeAmout" value="5">Very Good</label>
+    </div>
+<div class="row">
+        <p><strong>Your confidence in this care provider</strong></p>
+        <label class="radio-inline col-sm-1"><input type="radio" name="yourConfidenceInProvider" value="1">Very Poor</label>
+        <label class="radio-inline col-sm-1"><input type="radio" name="yourConfidenceInProvider" value="2">Poor</label>
+        <label class="radio-inline col-sm-1"><input type="radio" name="yourConfidenceInProvider" value="3">Fair</label>
+        <label class="radio-inline col-sm-1"><input type="radio" name="yourConfidenceInProvider" value="4">Good</label>
+        <label class="radio-inline col-sm-2"><input type="radio" name="yourConfidenceInProvider" value="5">Very Good</label>
+    </div>
+<div class="row">
+        <p><strong>Likelyhood of your recommending this care provider to others</strong></p>
+        <label class="radio-inline col-sm-1"><input type="radio" name="youWillRecommendation" value="1">Very Poor</label>
+        <label class="radio-inline col-sm-1"><input type="radio" name="youWillRecommendation" value="2">Poor</label>
+        <label class="radio-inline col-sm-1"><input type="radio" name="youWillRecommendation" value="3">Fair</label>
+        <label class="radio-inline col-sm-1"><input type="radio" name="youWillRecommendation" value="4">Good</label>
+        <label class="radio-inline col-sm-2"><input type="radio" name="youWillRecommendation" value="5">Very Good</label>
+    </div>
+<div class="form-group">
+    <label for="comment">Comment:</label>
+    <textarea class="form-control" rows="5" name="comment"></textarea>
+</div>
+           <div class="form-group">
+        <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+
+</form>
+    </body>
+</html>
