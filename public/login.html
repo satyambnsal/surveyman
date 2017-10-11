@@ -10,7 +10,7 @@
     <title>Admin Panel</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
 <link rel="stylesheet" href="login_style.css">
     <!-- Custom styles for this template -->
     <style type="text/css">
@@ -26,13 +26,12 @@
 </head>
 
 
-<body style="background-color: MediumSeaGreen">
+<body >
 <div class="container">
     <div class="row">
         <div class="col-sm-6 col-md-4 col-md-offset-4"">
-            <h1 class="text-center login-title">SurveyMan Adimn Panel</h1>
+            <h2 class="text-center login-title">SurveyMan Admin Panel</h2>
             <div class="account-wall">
-                
                 <form class="form-signin" method="post" action="/login">
                 <input type="text" class="form-control" placeholder="User Name" required autofocus>
                 <input type="password" class="form-control" placeholder="Password" required>
@@ -45,7 +44,7 @@
                 <a href="#" class="pull-right need-help">Need help? </a><span class="clearfix"></span>
                 </form>
             </div>
-            <a href="#" class="text-center new-account">Create an account </a>
+            <a href="/createAccount.html" class="text-center new-account">Create an account </a>
         </div>
     </div>
 </div>

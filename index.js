@@ -34,6 +34,10 @@ var formData=new CareProvider(req.body);
 app.post("/login",function(req,res){
     console.log(req.body);
     res.send("Thank ");
+});
+app.post("/createAccount",function(req,res){
+    console.log(req.body);
+    res.send("Thank you!!");
 })
 app.listen(port,function(){
     console.log("App is listening at port: "+port);
