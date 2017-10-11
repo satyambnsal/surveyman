@@ -30,6 +30,10 @@ var formData=new CareProvider(req.body);
         console.log("data saved successfully");
     });
     res.send("Thank you for your feedback!!");
+});
+app.post("/login",function(req,res){
+    console.log(req.body);
+    res.send("Thank ");
 })
 app.listen(port,function(){
     console.log("App is listening at port: "+port);
