@@ -1,13 +1,15 @@
 var nodemailer=require('nodemailer');
-var Config=require('./.env');
 
 var smtpTransport=nodemailer.createTransport({
-    service:"Gmail",
+    service:"smtp.gmail.com",
+    secure:true,
     auth:{
-        user:Config.user,
-        pass:Config.password
+        user:process.env.MAILER_ID,
+        pass:process.env.MAILER_PASSWORD
     }
 });
+console.log("mailer id: "+process.env.MAILER_ID);
+console.log("mailer password: "+process.env.MAILER_PASSWORD);
 var sendMail=function(host,receiver,callback){
 var rand=Math.floor(Math.random()*100+54);
 var link="http://"+host+"/verify?id="+rand;
@@ -18,7 +20,7 @@ var mailOptions={
 }
 console.log(mailOptions);
 smtpTransport.sendMail(mailOptions,function(err,response){
-    if(error){
+    if(err){
         console.log(err)
         callback(err);
     }
