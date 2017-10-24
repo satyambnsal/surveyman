@@ -5,8 +5,10 @@ var bodyParser=require('body-parser');
 var mongoose=require('mongoose');
 var chalk=require('chalk');
 var ejs=require('ejs');
+require('dotenv').config();
 var CareProvider=require('./models/CareProvider');
 var AdminAccount=require('./models/AdminAccount');
+var CommonUtils=require('./utility/commonUtils');
 var app=express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
@@ -65,8 +67,15 @@ var adminAccount=new AdminAccount({
         }
         else{
             console.log(chalk.green("registration success"));
-            res.send("You have registered successfully");
-        }
+            CommonUtils.sendMail("www.satyambansal.com",req.body.email,function(err,response){
+                if(err){
+                    res.send("error occured while sending an activation link");
+                }
+                else{
+                    res.send("activation link sent successfully");
+                }
+            });
+          }
     });
 });
 app.listen(port,function(){
