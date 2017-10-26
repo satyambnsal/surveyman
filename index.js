@@ -5,6 +5,8 @@ var bodyParser=require('body-parser');
 var mongoose=require('mongoose');
 var chalk=require('chalk');
 var ejs=require('ejs');
+var session=require('express-session');
+var MongoStore=require('connect-mongo')(session);
 require('dotenv').config();
 var CareProvider=require('./models/CareProvider');
 var AdminAccount=require('./models/AdminAccount');
@@ -22,6 +24,15 @@ res.sendFile(__dirname+"/index.html");
 */
 mongoose.Promise=global.Promise;
 mongoose.connect("mongodb://localhost:27017/surveyman");
+var db=mongoose.connection;
+app.use(session({
+    secret:'surveymanabc123',
+    resave:true,
+    saveUninitialized:false,
+    store:new MongoStore({
+        mongooseConnection:db
+    })
+}));
 app.post("/submitForm",function(req,res){
     console.log("REQUEST: ");
     console.log(req.body);
@@ -46,6 +57,7 @@ app.post("/login",function(req,res){
             res.render('errorPage.ejs');
         }
         else{
+            req.session.userId=user._id;
             chalk.green("authentication success");
             res.render("profile.ejs");
         }
@@ -56,16 +68,19 @@ app.post("/login",function(req,res){
 app.post("/createAccount",function(req,res){
     console.log(req.body);
 var adminAccount=new AdminAccount({
+    fullname:req.body.fullname,
     username:req.body.username,
     email:req.body.email,
     password:req.body.password
 });
-    adminAccount.save(function(err){
+    adminAccount.save(function(err,user){
         if(err){
             console.error(err);
-            res.send("Internal server error occured");
+            res.render("errorPage.ejs",{message:""})
         }
         else{
+            console.log(JSON.stringify(user));
+            req.session.userId=user._id;
             console.log(chalk.green("registration success"));
             CommonUtils.sendMail("www.satyambansal.com",req.body.email,function(err,response){
                 if(err){
@@ -77,6 +92,18 @@ var adminAccount=new AdminAccount({
             });
           }
     });
+});
+app.get("/logout",function(req,res){
+    if(req.session){
+        req.session.destroy(function(err){
+            if(err){
+                res.send(err.toString());
+            }
+            else{
+                return res.redirect("/");
+            }
+        })
+    }
 });
 app.listen(port,function(){
     console.log("App is listening at port: "+port);

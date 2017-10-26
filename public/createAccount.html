@@ -7,64 +7,85 @@
     <meta name="author" content="">
     <link rel="icon" href="">
 
-    <title>Register</title>
+    <title>SurveyMan Signup</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-       
+<style>
+    #heading{
+        margin-top: 10px;
+        padding-bottom: 10px;
+        font-family: monospace;
+        letter-spacing: 5px;
+        color: mediumseagreen
+    }
+    #form-container{
+        margin-left:20%;
+        margin-top:70px;
+    }
+    .label-text{
+        letter-spacing: 3px;
+        font-size: 20px;
+    }
+</style>       
 </head>
 
 
 <body>
-    <div class="container">
+    <div class="container" >
 <form class="form-horizontal" action='/createAccount' method="POST">
   <fieldset>
     <div id="legend">
-      <legend class="">Register</legend>
+      <legend class="text-center text-uppercase" id="heading">Survey Man Registration Page</legend>
     </div>
-    <div class="control-group">
+    <div id="form-container">
+    <div class="form-group">
+        <label class="control-label col-sm-4 label-text">Full Name</label>
+        <div class="controls col-sm-8 ">
+            <input type="text" id="fullname" name="fullname" required>
+        </div>
+    </div>
+    <div class="form-group">
       <!-- Username -->
-      <label class="control-label"  for="username">Username</label>
-      <div class="controls">
+      <label class="control-label col-sm-4 label-text"  for="username">Username</label>
+      <div class="controls col-sm-8">
         <input type="text" id="username" name="username" placeholder="" class="input-xlarge" required>
-        <p class="help-block">Username can contain any letters or numbers, without spaces</p>
       </div>
     </div>
  
-    <div class="control-group">
+    <div class="form-group">
       <!-- E-mail -->
-      <label class="control-label" for="email">E-mail</label>
-      <div class="controls">
+      <label class="control-label col-sm-4 label-text" for="email">E-mail</label>
+      <div class="controls col-sm-8">
         <input type="email" id="email" name="email" placeholder="" class="input-xlarge" required>
-        <p class="help-block">Please provide your E-mail</p>
       </div>
     </div>
  
-    <div class="control-group">
+    <div class="form-group">
       <!-- Password-->
-      <label class="control-label" for="password">Password</label>
-      <div class="controls">
+      <label class="control-label col-sm-4 label-text" for="password">Password</label>
+      <div class="controls col-sm-8">
         <input type="password" id="password" name="password" placeholder="" class="input-xlarge" required>
         <p class="help-block">Password should be at least 4 characters</p>
       </div>
     </div>
  
-    <div class="control-group">
+    <div class="form-group">
       <!-- Password -->
-      <label class="control-label"  for="password_confirm">Password (Confirm)</label>
-      <div class="controls">
+      <label class="control-label col-sm-4 label-text"  for="password_confirm">Confirm Password</label>
+      <div class="controls col-sm-8">
         <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="input-xlarge" onchange="passwordMatch()">
-        <p class="help-block">Please confirm password</p>
       </div>
     </div>
     <div id="matchStatus"></div>
-    <div class="control-group">
-      <!-- Button -->
-      <div class="controls">
-        <button class="btn btn-success" id="register">Register</button>
-      </div>
     </div>
+    <div class="form-group">
+      <!-- Button -->
+      <div class="controls col-sm-offset-4" style="margin-right:400px; margin-top: 20px;">
+        <button class="btn btn-success btn-block" id="register">Register</button>
+      </div>
+    </div>        
   </fieldset>
 </form>    
     </div>

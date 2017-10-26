@@ -1,119 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    </head>
-    <body>
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">Survey Man</a>
-        </div>
-        <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="/login.html">Admin Login</a></li>
-        </ul>
-    </div>
-</nav>
-<h2 style="text-align: center">CARE PROVIDER</h2>
-<form method="post" action="/submitForm" class="form-horizontal container">
-    <div class="form-group">
-        <label for="name">Full Name</label>
-        <input type="text" id="fullName" class="form-control">
-        </div>
-        <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="emailId" class="form-control">
-        </div>
-    <div class="row">
-        <p><strong>Friendliness/Courtesy of the care provider</strong></p>
-        <label class="radio-inline col-sm-1"><input type="radio" name="friendliness" value="1" >Very Poor</label>
-        <label class="radio-inline col-sm-1"><input type="radio" name="friendliness" value="2" >Poor</label>
-        <label class="radio-inline col-sm-1"><input type="radio" name="friendliness" value="3" >Fair</label>
-        <label class="radio-inline col-sm-1"><input type="radio" name="friendliness" value="4" >Good</label>
-        <label class="radio-inline col-sm-2"><input type="radio" name="friendliness" value="5" >Very Good</label>
-    </div>
-    <div class="row">
-        <p><strong>Explanation the care provider gave you about your problem condition</strong></p>
-        <label class="radio-inline col-sm-1"><input type="radio" name="explanation" value="1">Very Poor</label>
-        <label class="radio-inline col-sm-1"><input type="radio" name="explanation" value="2">Poor</label>
-        <label class="radio-inline col-sm-1"><input type="radio" name="explanation" value="3">Fair</label>
-        <label class="radio-inline col-sm-1"><input type="radio" name="explanation" value="4">Good</label>
-        <label class="radio-inline col-sm-2"><input type="radio" name="explanation" value="5">Very Good</label>
-    </div>
-    <div class="row">
-        <p><strong>Concern the care provider showed for your questions or worries</strong></p>
-        <label class="radio-inline col-sm-1"><input type="radio" name="concernShowed" value="1">Very Poor</label>
-        <label class="radio-inline col-sm-1"><input type="radio" name="concernShowed" value="2">Poor</label>
-        <label class="radio-inline col-sm-1"><input type="radio" name="concernShowed" value="3">Fair</label>
-        <label class="radio-inline col-sm-1"><input type="radio" name="concernShowed" value="4">Good</label>
-        <label class="radio-inline col-sm-2"><input type="radio" name="concernShowed" value="5">Very Good</label>
-    </div>
-    <div class="row">
-        <p><strong>Care provider's efforts to include you in decisions about your treatment</strong></p>
-        <label class="radio-inline col-sm-1"><input type="radio" name="includeInDecision" value="1">Very Poor</label>
-        <label class="radio-inline col-sm-1"><input type="radio" name="includeInDecision" value="2">Poor</label>
-        <label class="radio-inline col-sm-1"><input type="radio" name="includeInDecision" value="3">Fair</label>
-        <label class="radio-inline col-sm-1"><input type="radio" name="includeInDecision" value="4">Good</label>
-        <label class="radio-inline col-sm-2"><input type="radio" name="includeInDecision" value="5">Very Good</label>
-    </div>
-    <div class="row">
-        <p><strong>Information the care provider gave you about medications</strong></p>
-        <label class="radio-inline col-sm-1"><input type="radio" name="medicationInfo" value="1">Very Poor</label>
-        <label class="radio-inline col-sm-1"><input type="radio" name="medicationInfo" value="2">Poor</label>
-        <label class="radio-inline col-sm-1"><input type="radio" name="medicationInfo" value="3">Fair</label>
-        <label class="radio-inline col-sm-1"><input type="radio" name="medicationInfo" value="4">Good</label>
-        <label class="radio-inline col-sm-2"><input type="radio" name="medicationInfo" value="5">Very Good</label>
-    </div>
-    <div class="row">
-        <p><strong>Instructions the care provider gave you about follow-up care</strong></p>
-        <label class="radio-inline col-sm-1"><input type="radio" name="followUpInstructions" value="1">Very Poor</label>
-        <label class="radio-inline col-sm-1"><input type="radio" name="followUpInstructions" value="2">Poor</label>
-        <label class="radio-inline col-sm-1"><input type="radio" name="followUpInstructions" value="3">Fair</label>
-        <label class="radio-inline col-sm-1"><input type="radio" name="followUpInstructions" value="4">Good</label>
-        <label class="radio-inline col-sm-2"><input type="radio" name="followUpInstructions"value="5">Very Good</label>
-    </div>
-    <div class="row">
-        <p><strong>Degree to which care provider talked with you using words you could understand</strong></p>
-        <label class="radio-inline col-sm-1"><input type="radio" name="usedLanguage" value="1">Very Poor</label>
-        <label class="radio-inline col-sm-1"><input type="radio" name="usedLanguage" value="2">Poor</label>
-        <label class="radio-inline col-sm-1"><input type="radio" name="usedLanguage" value="3">Fair</label>
-        <label class="radio-inline col-sm-1"><input type="radio" name="usedLanguage" value="4">Good</label>
-        <label class="radio-inline col-sm-2"><input type="radio" name="usedLanguage" value="5">Very Good</label>
-    </div>
-    <div class="row">
-        <p><strong>Amout of time the care provider spent with you</strong></p>
-        <label class="radio-inline col-sm-1"><input type="radio" name="spentTimeAmount" value="1">Very Poor</label>
-        <label class="radio-inline col-sm-1"><input type="radio" name="spentTimeAmount" value="2">Poor</label>
-        <label class="radio-inline col-sm-1"><input type="radio" name="spentTimeAmount" value="3">Fair</label>
-        <label class="radio-inline col-sm-1"><input type="radio" name="spentTimeAmount" value="4">Good</label>
-        <label class="radio-inline col-sm-2"><input type="radio" name="spentTimeAmount" value="5">Very Good</label>
-    </div>
-<div class="row">
-        <p><strong>Your confidence in this care provider</strong></p>
-        <label class="radio-inline col-sm-1"><input type="radio" name="yourConfidenceInProvider" value="1">Very Poor</label>
-        <label class="radio-inline col-sm-1"><input type="radio" name="yourConfidenceInProvider" value="2">Poor</label>
-        <label class="radio-inline col-sm-1"><input type="radio" name="yourConfidenceInProvider" value="3">Fair</label>
-        <label class="radio-inline col-sm-1"><input type="radio" name="yourConfidenceInProvider" value="4">Good</label>
-        <label class="radio-inline col-sm-2"><input type="radio" name="yourConfidenceInProvider" value="5">Very Good</label>
-    </div>
-<div class="row">
-        <p><strong>Likelyhood of your recommending this care provider to others</strong></p>
-        <label class="radio-inline col-sm-1"><input type="radio" name="youWillRecommend" value="1">Very Poor</label>
-        <label class="radio-inline col-sm-1"><input type="radio" name="youWillRecommend" value="2">Poor</label>
-        <label class="radio-inline col-sm-1"><input type="radio" name="youWillRecommend" value="3">Fair</label>
-        <label class="radio-inline col-sm-1"><input type="radio" name="youWillRecommend" value="4">Good</label>
-        <label class="radio-inline col-sm-2"><input type="radio" name="youWillRecommend" value="5">Very Good</label>
-    </div>
-<div class="form-group">
-    <label for="comment">Comment:</label>
-    <textarea class="form-control" rows="5" name="comment"></textarea>
-</div>
-           <div class="form-group">
-        <button type="submit" class="btn btn-success">Submit</button>
-    </div>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="">
 
-</form>
-    </body>
+    <title>Starter Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <style type="text/css">
+        body {
+            padding-top: 5rem;
+        }
+        
+        #heading {
+            padding-top: 100px;
+            text-align: center;
+            letter-spacing: 15px;
+            color:mediumseagreen;
+        }
+        #heading-text{
+            text-align: center;
+            font-family: Courier New;
+            font-size: 20px;
+            letter-spacing: 3px;
+            text-indent: 50px;
+        }
+        #gs-button{
+            margin-top:100px;
+            margin-left:25%;
+            width:600px;
+            
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <a class="btn btn-outline-success my-2 my-sm-0" href="createAccount.html">Sign Up</a>
+                <a class="btn btn-outline-success my-2 my-sm-0" href="login.html">Sign In</a>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div >
+            <h1 id="heading">SURVEY MAN</h1>
+            <p id="heading-text"> Platform to create and manage beautiful forms</p>
+        </div>
+        <div id="gs-button">
+            <a href="createAccount.html" style="text-decoration: none" class=" btn btn-success btn-block"> Getting Started</a>
+        </div>
+    </div>
+    <!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script>
+        (function() {
+            'use strict'
+
+            if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+                var msViewportStyle = document.createElement('style')
+                msViewportStyle.appendChild(
+                    document.createTextNode(
+                        '@-ms-viewport{width:auto!important}'
+                    )
+                )
+                document.head.appendChild(msViewportStyle)
+            }
+
+        }())
+    </script>
+
+</body>
 </html>
